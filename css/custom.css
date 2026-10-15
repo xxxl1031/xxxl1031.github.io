@@ -40,12 +40,14 @@ body {
     transform: translateX(0);
   }
 }
-.page {
+body {
   background: url("/img/cover4.jpg");
   background-size: cover;
   background-attachment: fixed;
+  background-position: center;
 }
+/* 把卡片白色底色改成半透明，和示例效果一致 */
+.article-item,
 .page-content {
   background: rgba(255,255,255,0.72);
-  padding: 2rem;
 }
