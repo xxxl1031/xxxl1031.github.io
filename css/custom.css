@@ -40,3 +40,12 @@ body {
     transform: translateX(0);
   }
 }
+.page {
+  background: url("/img/cover4.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+.page-content {
+  background: rgba(255,255,255,0.72);
+  padding: 2rem;
+}
