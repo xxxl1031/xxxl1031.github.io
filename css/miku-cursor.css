@@ -1,0 +1,164 @@
+/*!
+ * miku-cursor.css —— 初音未来鼠标指针（全站生效）
+ * ------------------------------------------------------------------
+ * 素材来源：source/cursors/*.ani（Windows 指针包，160×160 / 多帧）
+ * 转换脚本：_tools/cursor/build_cursor_png.py
+ *   · 浏览器（Blink/Gecko）都无法解码 .ani，且 Firefox 会直接忽略
+ *     大于 128×128 的指针图片，所以统一导出为 128×128 PNG；
+ *   · 每个 PNG 后面的两个数字是热点（hot spot），即“点击点”，
+ *     已按 160→128 的比例换算，鼠标尖尖与点击位置保持对齐。
+ * 引入位置：themes/ayer/layout/_partial/head.ejs
+ * ------------------------------------------------------------------
+ * 想换某一种指针，只要把下面 url() 里的文件名换成 source/cursors/miku/
+ * 里的另一张图，并微调热点即可。
+ */
+
+/* ------------------------------------------------------------------
+ * 1. 默认指针：普通箭头（整站兜底，所有元素先套这一层）
+ * ------------------------------------------------------------------ */
+html,
+body,
+body * {
+  cursor: url("/cursors/miku/normal.png") 0 0, auto !important;
+}
+
+/* ------------------------------------------------------------------
+ * 2. 链接 / 按钮 / 可点击区域：小手（Link.ani）
+ * ------------------------------------------------------------------ */
+a[href],
+area[href],
+button,
+select,
+summary,
+label[for],
+[role="button"],
+[onclick],
+[ondblclick],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"],
+input[type="file"],
+input[type="color"],
+.clickable,
+.pointer,
+.miku-pointer,
+/* 以下为 Ayer 主题里用 div 做的可点击块 */
+.navbar-toggle,
+.sidebar-toggle,
+.float-btn,
+#totop,
+.copy-btn,
+.tag-item,
+.menu-item,
+.nav-item,
+.tag-cloud a,
+.social-icon,
+.share-outer,
+.share-item,
+.reward-btn,
+.article-item .title a,
+.gallery-item,
+.albums,
+.article-item .article-meta a,
+.pagination a {
+  cursor: url("/cursors/miku/link.png") 0 0, pointer !important;
+}
+
+/* ------------------------------------------------------------------
+ * 3. 文本输入 / 可编辑区域：工字光标（Text Select.ani，热点 14 28）
+ * ------------------------------------------------------------------ */
+textarea,
+[contenteditable]:not([contenteditable="false"]),
+input:not([type]),
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"] {
+  cursor: url("/cursors/miku/text.png") 14 28, text !important;
+}
+
+/* ------------------------------------------------------------------
+ * 4. 禁用状态：禁止符（Unavailable.ani）
+ * ------------------------------------------------------------------ */
+:disabled,
+[aria-disabled="true"],
+.disabled,
+.is-disabled,
+.miku-unavailable {
+  cursor: url("/cursors/miku/unavailable.png") 0 0, not-allowed !important;
+}
+
+/* ------------------------------------------------------------------
+ * 5. 帮助提示：问号（Help Select.ani）
+ * ------------------------------------------------------------------ */
+abbr[title],
+.help,
+.miku-help {
+  cursor: url("/cursors/miku/help.png") 0 0, help !important;
+}
+
+/* ------------------------------------------------------------------
+ * 6. 图片：十字准星（Precision Select.ani，热点 26 26）
+ * ------------------------------------------------------------------ */
+img,
+video,
+.miku-precision {
+  cursor: url("/cursors/miku/precision.png") 26 26, crosshair !important;
+}
+
+/* 图片在链接里时，点击是“跳转”，仍用小手 */
+a[href] img,
+a[href] video {
+  cursor: url("/cursors/miku/link.png") 0 0, pointer !important;
+}
+
+/* ------------------------------------------------------------------
+ * 7. 可选工具类：需要时给元素加 class 即可（默认不作用于任何元素）
+ * ------------------------------------------------------------------ */
+.miku-default {
+  cursor: url("/cursors/miku/normal.png") 0 0, auto !important;
+}
+.miku-move {
+  cursor: url("/cursors/miku/move.png") 61 65, move !important;
+}
+.miku-busy {
+  cursor: url("/cursors/miku/busy.png") 0 0, wait !important;
+}
+.miku-work {
+  cursor: url("/cursors/miku/work.png") 6 7, progress !important;
+}
+.miku-alternate {
+  cursor: url("/cursors/miku/alternate.png") 10 2, default !important;
+}
+.miku-person {
+  cursor: url("/cursors/miku/person.png") 2 3, default !important;
+}
+.miku-handwriting {
+  cursor: url("/cursors/miku/handwriting.png") 3 3, text !important;
+}
+.miku-location {
+  cursor: url("/cursors/miku/location.png") 62 94, crosshair !important;
+}
+.miku-resize-h {
+  cursor: url("/cursors/miku/resize-h.png") 63 65, ew-resize !important;
+}
+.miku-resize-v {
+  cursor: url("/cursors/miku/resize-v.png") 61 62, ns-resize !important;
+}
+.miku-resize-d1 {
+  cursor: url("/cursors/miku/resize-d1.png") 62 63, nwse-resize !important;
+}
+.miku-resize-d2 {
+  cursor: url("/cursors/miku/resize-d2.png") 63 62, nesw-resize !important;
+}
