@@ -1,12 +1,12 @@
 /*!
- * miku-cursor.css —— 初音未来鼠标指针（全站生效，32×32 标准尺寸）
+ * miku-cursor.css —— 初音未来鼠标指针（全站生效，48×48 尺寸）
  * ------------------------------------------------------------------
  * 素材来源：source/cursors/*.ani（Windows 指针包，160×160 / 多帧）
- * 转换脚本：_tools/cursor/build_cursor_png.py 32
+ * 转换脚本：_tools/cursor/build_cursor_png.py 48
  *   · 浏览器（Blink/Gecko）都无法解码 .ani，所以每个指针导出为首帧 PNG；
- *   · 这里统一按 32×32 生成，等于系统标准指针大小；
+ *   · 这里统一按 48×48 生成，比系统默认的 32×32 大一档，图案更清楚；
  *   · 每个 PNG 后面的两个数字是热点（hot spot），即“点击点”，
- *     已按 160→32 的比例换算（脚本 out/manifest.json 里有同一份数据），
+ *     已按 160→48 的比例换算（脚本 out/manifest.json 里有同一份数据），
  *     保证鼠标尖与点击位置对齐。
  * 引入位置：themes/ayer/layout/_partial/head.ejs
  * ------------------------------------------------------------------
@@ -69,7 +69,7 @@ input[type="color"],
 }
 
 /* ------------------------------------------------------------------
- * 3. 文本输入 / 可编辑区域：工字光标（Text Select.ani，热点 3 7）
+ * 3. 文本输入 / 可编辑区域：工字光标（Text Select.ani，热点 5 10）
  * ------------------------------------------------------------------ */
 textarea,
 [contenteditable]:not([contenteditable="false"]),
@@ -86,7 +86,7 @@ input[type="time"],
 input[type="datetime-local"],
 input[type="month"],
 input[type="week"] {
-  cursor: url("/cursors/miku/text.png") 3 7, text !important;
+  cursor: url("/cursors/miku/text.png") 5 10, text !important;
 }
 
 /* ------------------------------------------------------------------
@@ -110,12 +110,12 @@ abbr[title],
 }
 
 /* ------------------------------------------------------------------
- * 6. 图片：十字准星（Precision Select.ani，热点 6 6）
+ * 6. 图片：十字准星（Precision Select.ani，热点 10 10）
  * ------------------------------------------------------------------ */
 img,
 video,
 .miku-precision {
-  cursor: url("/cursors/miku/precision.png") 6 6, crosshair !important;
+  cursor: url("/cursors/miku/precision.png") 10 10, crosshair !important;
 }
 
 /* 图片在链接里时，点击是“跳转”，仍用小手 */
@@ -131,16 +131,16 @@ a[href] video {
   cursor: url("/cursors/miku/normal.png") 0 0, auto !important;
 }
 .miku-move {
-  cursor: url("/cursors/miku/move.png") 15 16, move !important;
+  cursor: url("/cursors/miku/move.png") 23 24, move !important;
 }
 .miku-busy {
   cursor: url("/cursors/miku/busy.png") 0 0, wait !important;
 }
 .miku-work {
-  cursor: url("/cursors/miku/work.png") 2 2, progress !important;
+  cursor: url("/cursors/miku/work.png") 2 3, progress !important;
 }
 .miku-alternate {
-  cursor: url("/cursors/miku/alternate.png") 2 0, default !important;
+  cursor: url("/cursors/miku/alternate.png") 4 1, default !important;
 }
 .miku-person {
   cursor: url("/cursors/miku/person.png") 1 1, default !important;
@@ -149,17 +149,17 @@ a[href] video {
   cursor: url("/cursors/miku/handwriting.png") 1 1, text !important;
 }
 .miku-location {
-  cursor: url("/cursors/miku/location.png") 15 24, crosshair !important;
+  cursor: url("/cursors/miku/location.png") 23 35, crosshair !important;
 }
 .miku-resize-h {
-  cursor: url("/cursors/miku/resize-h.png") 16 16, ew-resize !important;
+  cursor: url("/cursors/miku/resize-h.png") 24 24, ew-resize !important;
 }
 .miku-resize-v {
-  cursor: url("/cursors/miku/resize-v.png") 15 16, ns-resize !important;
+  cursor: url("/cursors/miku/resize-v.png") 23 23, ns-resize !important;
 }
 .miku-resize-d1 {
-  cursor: url("/cursors/miku/resize-d1.png") 15 16, nwse-resize !important;
+  cursor: url("/cursors/miku/resize-d1.png") 23 24, nwse-resize !important;
 }
 .miku-resize-d2 {
-  cursor: url("/cursors/miku/resize-d2.png") 16 16, nesw-resize !important;
+  cursor: url("/cursors/miku/resize-d2.png") 24 23, nesw-resize !important;
 }
